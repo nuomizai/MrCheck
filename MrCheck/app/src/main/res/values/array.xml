@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="timesearch">
+        <item>近一周</item>
+        <item>近一个月</item>
+        <item>近半年</item>
+        <item>近一年</item>
+    </string-array>
+</resources>
