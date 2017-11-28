@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/report_form_title"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:text="报表"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        ></TextView>
+
+
+    <Button
+        android:id = "@+id/report_form_month"
+        android:text = "本月消费报表"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        >
+    </Button>
+
+    <Button
+        android:id = "@+id/report_form_year"
+        android:text = "本年消费报表"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        >
+    </Button>
+
+    <TextView
+        android:id="@+id/report_form_history1"
+        android:layout_width="95dp"
+        android:layout_height="52dp"
+        android:text="历史报表"
+        android:textSize="20sp"
+        android:textStyle="bold">
+    </TextView>
+
+    <Spinner
+        android:id = "@+id/report_form_history_year"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/year"
+        android:spinnerMode="dialog"
+        android:layout_weight="0.14">
+    </Spinner>
+
+    <Spinner
+        android:id = "@+id/report_form_history_month"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/month"
+        android:spinnerMode="dialog"
+        android:layout_weight="0.14">
+    </Spinner>
+
+    <TextView
+        android:id="@+id/report_form_history2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="历史报表"
+        android:textColor="#ffffffff"
+        android:textStyle="bold"
+        android:layout_marginLeft = "10sp"
+        android:layout_marginRight = "5sp"
+        >
+    </TextView>
+</LinearLayout>
