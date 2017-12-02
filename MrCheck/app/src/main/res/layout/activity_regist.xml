@@ -18,10 +18,11 @@
         android:layout_centerInParent="true" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/introduction"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:hint="邮箱"
+        android:hint="自我介绍"
+        android:layout_marginBottom="14dp"
         android:layout_above="@+id/registButton"
         android:layout_alignLeft="@+id/registButton"
         android:layout_alignStart="@+id/registButton" />
@@ -31,9 +32,9 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:hint="密码"
-        android:layout_above="@+id/email"
-        android:layout_alignLeft="@+id/email"
-        android:layout_alignStart="@+id/email" />
+        android:layout_above="@+id/introduction"
+        android:layout_alignLeft="@+id/introduction"
+        android:layout_alignStart="@+id/introduction" />
 
     <EditText
         android:id="@+id/username"
@@ -43,4 +44,14 @@
         android:layout_above="@+id/password"
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password" />
+
+    <TextView
+        android:id="@+id/response"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="response"
+        android:gravity="center"
+        android:layout_below="@+id/registButton"
+        android:layout_alignLeft="@+id/registButton"
+        android:layout_alignStart="@+id/registButton" />
 </RelativeLayout>
