@@ -9,10 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.util.Log;
 import android.os.Message;
-import org.json.*;
+import org.json.JSONObject;
 
 import okhttp3.*;
-import java.io.IOException;
 
 public class RegistActivity extends AppCompatActivity {
     private Button reg;
@@ -23,10 +22,27 @@ public class RegistActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg){
             if(msg.what==1){
-                String qq=(String)msg.obj;
+                String qq="注册成功";
                 Log.i("RegistActivity",qq);
                 text1.setText(qq);
             }
+            if(msg.what==2){
+                String qq="用户名已被占用";
+                text1.setText(qq);
+            }
+            if(msg.what==3){
+                String qq="用户名长度错误";
+                text1.setText(qq);
+            }
+            if(msg.what==4){
+                String qq="密码长度错误";
+                text1.setText(qq);
+            }
+            if(msg.what==5) {
+                String qq = "失败";
+                text1.setText(qq);
+            }
+
         }
     };
     @Override
@@ -81,11 +97,33 @@ public class RegistActivity extends AppCompatActivity {
     }
     private void parseJSONWithJSONObject(String jsonData){
         try{
-            JSONArray jsonArray=new JSONArray(jsonData);
-            JSONObject jsonObject=jsonArray.getJSONObject(0);
-            String msg=jsonObject.getString("msg");
+            JSONObject jsonObject=new JSONObject(jsonData);
+            final String msg=jsonObject.getString("Msg");
             Log.d("RegistActivity","msg is"+msg);
-            
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Message message=new Message();
+                    if(msg.equals("0")) {
+                        message.what=1;
+                    }
+                    if(msg.equals("1")){
+                        message.what=2;
+                    }
+                    if(msg.equals("2")){
+                        message.what=3;
+                    }
+                    if(msg.equals("3")){
+                        message.what=4;
+                    }
+                    if(msg.equals("4")){
+                        message.what=5;
+                    }
+
+                    mHandler.sendMessage(message);
+                }
+            }).start();
+
             }catch(Exception e){
             e.printStackTrace();
         }
