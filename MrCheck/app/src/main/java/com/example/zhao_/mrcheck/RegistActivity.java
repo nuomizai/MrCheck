@@ -72,7 +72,6 @@ public class RegistActivity extends AppCompatActivity {
                     Response response=client.newCall(request).execute();
                     String responseData=response.body().string();
                     parseJSONWithJSONObject(responseData);
-
                 }catch(Exception e){
                     e.printStackTrace();
                 }
